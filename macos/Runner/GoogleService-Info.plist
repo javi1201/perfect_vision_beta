@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>234474966797-5ocfs2utv1daekh7khctfrfi0ltcdjor.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.234474966797-5ocfs2utv1daekh7khctfrfi0ltcdjor</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA_QOFDA_05vZJKdJuCHhtbmzbqzn_-G6U</string>
+	<key>GCM_SENDER_ID</key>
+	<string>234474966797</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.perfectVision.RunnerTests</string>
+	<key>PROJECT_ID</key>
+	<string>perfect-vision-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>perfect-vision-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:234474966797:ios:49f522342797bdd5266a44</string>
+	<key>DATABASE_URL</key>
+	<string>https://perfect-vision-app-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

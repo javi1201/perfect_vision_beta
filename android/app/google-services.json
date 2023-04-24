@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "234474966797",
+    "firebase_url": "https://perfect-vision-app-default-rtdb.firebaseio.com",
+    "project_id": "perfect-vision-app",
+    "storage_bucket": "perfect-vision-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:234474966797:android:6c58be8a168d80cd266a44",
+        "android_client_info": {
+          "package_name": "com.example.perfect_vision"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "234474966797-n1cpn1pj6glekp9r28n6j6bctr47s88k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRxeoP3UMatoAn_MCGDlbOHUd8RmqGPYc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "234474966797-n1cpn1pj6glekp9r28n6j6bctr47s88k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

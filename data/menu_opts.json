@@ -1,0 +1,86 @@
+{
+    "nombreApp" : "perfect_vision",
+    "rutas" : [
+        {
+            "ruta" : "tDuocromo",
+            "icon" : "format_color_text_rounded",
+            "texto": "Test Bicromático"
+        },
+        {
+            "ruta" : "tSnellen",
+            "icon" : "format_shapes_outlined",
+            "texto": "Test de Snellen"
+        },
+        {
+            "ruta" : "tIshihara",
+            "icon" : "playlist_add_check_circle_outlined",
+            "texto": "Test de Ishihara"
+        },
+        {
+            "ruta" : "visionTestPage",
+            "icon" : "visibility_outlined",
+            "texto": "Test de Visión"
+        }
+    ],
+    "rutas2" : [
+        {
+            "ruta" : "ojoHumano",
+            "icon" : "remove_red_eye_outlined",
+            "texto": "Anatomia del Ojo Humano"
+        },
+        {
+            "ruta" : "calaveraHumana",
+            "icon" : "book_online_sharp",
+            "texto": "Craneo Humano"
+        },
+        {
+            "ruta" : "cerebroHumano",
+            "icon" : "bakery_dining_outlined",
+            "texto": "Cerebro Humano"
+        }
+    ],
+    "rutas3" : [
+        {
+            "ruta" : "10Feet",
+            "icon" : "remove_red_eye_outlined",
+            "texto": "Test de Visión - 10 Pies"
+        },
+        {
+            "ruta" : "20Feet",
+            "icon" : "remove_red_eye_outlined",
+            "texto": "Test de Visión - 20 Pies"
+        },
+        {
+            "ruta" : "nearVisionCard",
+            "icon" : "remove_red_eye_outlined",
+            "texto": "Tarjetas para Visión Cercana"
+        },
+        {
+            "ruta" : "testVisionPage",
+            "icon" : "remove_red_eye_outlined",
+            "texto": "Test de Vision Cercana"
+        },
+        {
+            "ruta" : "nearVisionCardInverted",
+            "icon" : "remove_red_eye_outlined",
+            "texto": "Tarjetas para Visión Cercana Invertido"
+        }
+    ],
+    "rutas4" : [
+        {
+            "ruta" : "alfabeto",
+            "icon" : "remove_red_eye_outlined",
+            "texto": "Alfabeto"
+        },
+        {
+            "ruta" : "numeros",
+            "icon" : "remove_red_eye_outlined",
+            "texto": "Números"
+        },
+        {
+            "ruta" : "simbolos",
+            "icon" : "remove_red_eye_outlined",
+            "texto": "Símbolos"
+        }
+    ]
+}
