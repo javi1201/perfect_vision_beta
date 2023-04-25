@@ -22,8 +22,36 @@ final List<Post> posts = [
     date: DateTime.now(),
   ),
   Post(
-    title: 'Cómo crear una aplicación en Flutter',
-    author: 'Jane Smith',
+    title: 'Como hacer el test de Ishihara',
+    author: 'Paola López',
+    content: 'Para crear una aplicación en Flutter, primero debes...',
+    date: DateTime.now(),
+    //date: DateFormat('yyyy-MM-dd HH:mm').format(DateTime.now()),
+  ),
+  Post(
+    title: '¿Qué es el policarbonato?',
+    author: 'Manuel Perez',
+    content: 'Para crear una aplicación en Flutter, primero debes...',
+    date: DateTime.now(),
+    //date: DateFormat('yyyy-MM-dd HH:mm').format(DateTime.now()),
+  ),
+  Post(
+    title: '¿Qué es un lente progresivo?',
+    author: 'Jose Luis',
+    content: 'Para crear una aplicación en Flutter, primero debes...',
+    date: DateTime.now(),
+    //date: DateFormat('yyyy-MM-dd HH:mm').format(DateTime.now()),
+  ),
+  Post(
+    title: 'Fundamentos de la Optometria',
+    author: 'Karla Morales',
+    content: 'Para crear una aplicación en Flutter, primero debes...',
+    date: DateTime.now(),
+    //date: DateFormat('yyyy-MM-dd HH:mm').format(DateTime.now()),
+  ),
+  Post(
+    title: 'La importancia de limpiar tus lentes',
+    author: 'Luis Castro',
     content: 'Para crear una aplicación en Flutter, primero debes...',
     date: DateTime.now(),
     //date: DateFormat('yyyy-MM-dd HH:mm').format(DateTime.now()),
@@ -124,7 +152,7 @@ class BlogPage extends StatelessWidget {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.bubble_chart),
-            label: 'Blog',
+            label: 'Blog Informativo',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.supervised_user_circle),

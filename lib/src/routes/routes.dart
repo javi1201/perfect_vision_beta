@@ -42,7 +42,7 @@ Map<String, WidgetBuilder> getApplicationRoutes() {
     'ojoHumano': (BuildContext context) => const OjoHumanoPage(),
     'cerebroHumano': (BuildContext context) => const CerebroHumanoPage(),
     'calaveraHumana': (BuildContext context) => const CalaveraHumanaPage(),
-    'medicamentos': (BuildContext context) => const MedicationList(),
+    'medicamentos': (BuildContext context) => MedicationList(),
     'visionTestPage': (BuildContext context) => const TestVisionPage(),
     '10Feet': (BuildContext context) => const Feet10Page(),
     '20Feet': (BuildContext context) => const Feet20Page(),

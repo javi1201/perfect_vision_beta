@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'model.dart';
 
-const backgroundColor = Color(0xff343541);
-const botBackgroundColor = Color(0xff444654);
+const backgroundColor = Color.fromRGBO(198, 207, 207, 1);
+const botBackgroundColor = Color.fromRGBO(82, 147, 206, 1.0);
 
 class ChatPage extends StatefulWidget {
   const ChatPage({super.key});
@@ -15,7 +15,7 @@ class ChatPage extends StatefulWidget {
 }
 
 Future<String> generateResponse(String prompt) async {
-  const apiKey = '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';
+  const apiKey = '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';
 
   var url = Uri.https("api.openai.com", "/v1/completions");
   final response = await http.post(
@@ -128,7 +128,7 @@ class _ChatPageState extends State<ChatPage> {
         child: IconButton(
           icon: const Icon(
             Icons.send_rounded,
-            color: Color.fromRGBO(142, 142, 160, 1),
+            color: Colors.white,
           ),
           onPressed: () async {
             setState(
@@ -174,7 +174,7 @@ class _ChatPageState extends State<ChatPage> {
         controller: _textController,
         decoration: const InputDecoration(
           hintText: 'Escribe tu pregunta.',
-          hintStyle: TextStyle(color: Colors.grey),
+          hintStyle: TextStyle(color: Colors.white),
           fillColor: botBackgroundColor,
           filled: true,
           border: InputBorder.none,
@@ -232,7 +232,7 @@ class ChatMessageWidget extends StatelessWidget {
               ? Container(
                   margin: const EdgeInsets.only(right: 16.0),
                   child: CircleAvatar(
-                    backgroundColor: const Color.fromRGBO(16, 163, 127, 1),
+                    backgroundColor: const Color.fromARGB(255, 0, 51, 99),
                     child: Image.asset(
                       'data/assets/images/background_images/perfect_vision.png',
                       color: Colors.white,

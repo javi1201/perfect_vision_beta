@@ -39,41 +39,44 @@ class _PortafolioPageState extends State<PortafolioPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Portafolio PV'),
-        backgroundColor: const Color.fromRGBO(0, 67, 130, 1.0),
+        backgroundColor: const Color.fromRGBO(82, 147, 206, 1.0),
         actions: [
           IconButton(
-            icon: const Icon(Icons.first_page, size: 30),
+            icon: const Icon(Icons.upload_rounded, size: 30),
             onPressed: jumpToFirstPage,
           ),
         ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            //Text('Simple PDF Viewer'),
-            //SizedBox(height: 16),
-            Expanded(
-              child: PdfView(
-                controller: pdfController,
-                scrollDirection: Axis.vertical,
-                onPageChanged: (page) {
-                  //print('Current page: $page');
-                },
+      body: Container(
+        color: const Color.fromRGBO(236, 247, 247, 1),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              //Text('Simple PDF Viewer'),
+              //SizedBox(height: 16),
+              Expanded(
+                child: PdfView(
+                  controller: pdfController,
+                  scrollDirection: Axis.vertical,
+                  onPageChanged: (page) {
+                    //print('Current page: $page');
+                  },
+                ),
               ),
-            ),
-            /*SizedBox(height: 32),
-            Text('PDF Viewer with Pinch Zoom'),
-            SizedBox(height: 16),
-            Expanded(
-              child: PdfViewPinch(
-                controller: pdfPinchController,
-                onPageChanged: (zoom) {
-                  print('Current zoom: $zoom');
-                },
-              ),
-            ),*/
-          ],
+              /*SizedBox(height: 32),
+              Text('PDF Viewer with Pinch Zoom'),
+              SizedBox(height: 16),
+              Expanded(
+                child: PdfViewPinch(
+                  controller: pdfPinchController,
+                  onPageChanged: (zoom) {
+                    print('Current zoom: $zoom');
+                  },
+                ),
+              ),*/
+            ],
+          ),
         ),
       ),
     );

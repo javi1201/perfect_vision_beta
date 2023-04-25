@@ -11,7 +11,7 @@ class NearVisionPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Test de Visión Cercana'),
-        backgroundColor: const Color.fromRGBO(0, 67, 130, 1.0),
+        backgroundColor: const Color.fromRGBO(82, 147, 206, 1.0),
         actions: [
           IconButton(
             icon: const Icon(Icons.home, size: 30),
@@ -26,13 +26,50 @@ class NearVisionPage extends StatelessWidget {
   }
 
   Widget _lista() {
-    // menuProvider.cargarData()
     return FutureBuilder(
       future: menuProvider.cargarData(),
       initialData: const [],
       builder: (context, AsyncSnapshot snapshot) {
-        return ListView(
-          children: _listaItems(snapshot.data, context),
+        return Container(
+          color: const Color.fromRGBO(236, 247, 247, 1),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10.0),
+            child: ListView.builder(
+              itemCount: snapshot.data.length,
+              itemBuilder: (BuildContext context, int index) {
+                final opt = snapshot.data[index];
+                return Card(
+                  elevation: 3.0,
+                  margin: const EdgeInsets.symmetric(
+                      horizontal: 20.0, vertical: 10.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: ListTile(
+                    title: Container(
+                      child: Text(
+                        opt['texto'],
+                      ),
+                    ),
+                    leading: Container(
+                      alignment: Alignment.center,
+                      width: 40.0,
+                      child: getIcon(opt['icon']),
+                    ),
+                    trailing: Container(
+                      alignment: Alignment.center,
+                      width: 20.0,
+                      child: const Icon(Icons.keyboard_arrow_right,
+                          color: Colors.blue),
+                    ),
+                    onTap: () {
+                      Navigator.pushNamed(context, opt['ruta']);
+                    },
+                  ),
+                );
+              },
+            ),
+          ),
         );
       },
     );

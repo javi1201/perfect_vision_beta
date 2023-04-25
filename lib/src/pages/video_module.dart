@@ -85,7 +85,7 @@ class VideoListScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Realidad Aumentada'),
-        backgroundColor: const Color.fromRGBO(0, 67, 130, 1.0),
+        backgroundColor: const Color.fromRGBO(82, 147, 206, 1.0),
         actions: [
           IconButton(
             icon: const Icon(Icons.home, size: 30),
@@ -95,29 +95,13 @@ class VideoListScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: ListView.builder(
-        itemCount: videos.length,
-        itemBuilder: (BuildContext context, int index) {
-          return GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (BuildContext context) => VideoPlayerScreen(
-                    videoUrl: videos[index]["videoUrl"]!,
-                    videoTitle: videos[index]["title"]!,
-                  ),
-                ),
-              );
-            },
-            child: ListTile(
-              title: Text(
-                videos[index]["title"]!,
-                style: const TextStyle(
-                    fontWeight: FontWeight.bold, fontSize: 17.0),
-              ),
-              subtitle: Text(videos[index]["description"]!),
-              trailing: const Icon(Icons.arrow_forward_ios),
+      body: Container(
+        padding: const EdgeInsets.only(top: 10.0),
+        color: const Color.fromRGBO(236, 247, 247, 1),
+        child: ListView.builder(
+          itemCount: videos.length,
+          itemBuilder: (BuildContext context, int index) {
+            return GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
@@ -129,23 +113,39 @@ class VideoListScreen extends StatelessWidget {
                   ),
                 );
               },
-            ), /*Container(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
+              child: Card(
+                elevation: 3.0,
+                margin: const EdgeInsets.symmetric(
+                    horizontal: 20.0, vertical: 10.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: ListTile(
+                  title: Text(
                     videos[index]["title"]!,
                     style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 17.0),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17.0,
+                    ),
                   ),
-                  Text(videos[index]["description"]!),
-                  const Divider()
-                ],
+                  subtitle: Text(videos[index]["description"]!),
+                  trailing: const Icon(Icons.arrow_forward_ios),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => VideoPlayerScreen(
+                          videoUrl: videos[index]["videoUrl"]!,
+                          videoTitle: videos[index]["title"]!,
+                        ),
+                      ),
+                    );
+                  },
+                ),
               ),
-            ),*/
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }
@@ -205,7 +205,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('AR Progresivos'),
-        backgroundColor: const Color.fromRGBO(0, 67, 130, 1.0),
+        backgroundColor: const Color.fromRGBO(82, 147, 206, 1.0),
         actions: [
           IconButton(
             icon: const Icon(Icons.question_mark_rounded, size: 30),

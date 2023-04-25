@@ -9,7 +9,7 @@ class SnellenPage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Test de Snellen'),
-        backgroundColor: const Color.fromRGBO(0, 67, 130, 1.0),
+        backgroundColor: const Color.fromRGBO(82, 147, 206, 1.0),
         actions: [
           IconButton(
             icon: const Icon(Icons.home, size: 30),
