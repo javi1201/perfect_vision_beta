@@ -4,22 +4,26 @@
         {
             "ruta" : "tDuocromo",
             "icon" : "format_color_text_rounded",
-            "texto": "Test Bicromático"
+            "texto": "Test Bicromático",
+            "subtexto": "El test bicromático se utiliza para diagnosticar defectos de refracción, como miopía e hipermetropía."
         },
         {
             "ruta" : "tSnellen",
             "icon" : "format_shapes_outlined",
-            "texto": "Test de Snellen"
+            "texto": "Test de Snellen",
+            "subtexto": "El Test de Snellen es un examen oftalmológico que evalúa la agudeza visual."
         },
         {
             "ruta" : "tIshihara",
             "icon" : "playlist_add_check_circle_outlined",
-            "texto": "Test de Ishihara"
+            "texto": "Test de Ishihara",
+            "subtexto": "El Test de Ishihara es una prueba de detección del daltonismo que utiliza placas con puntos de colores con números o figuras ocultos."
         },
         {
             "ruta" : "visionTestPage",
             "icon" : "visibility_outlined",
-            "texto": "Test de Visión"
+            "texto": "Test de Visión",
+            "subtexto": "Los test de visión sirven para evaluar la agudeza visual, la percepción de colores, visión periférica y otras habilidades visuales."
         }
     ],
     "rutas2" : [

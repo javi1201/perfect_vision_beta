@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../providers/menu_provider.dart';
 import '../../utils/icono_string_util.dart';
+import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
 class PruebasPage extends StatelessWidget {
   const PruebasPage({Key? key}) : super(key: key);
@@ -45,10 +46,30 @@ class PruebasPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   child: ListTile(
-                    title: Text(opt['texto']),
-                    leading: getIcon(opt['icon']),
-                    trailing: const Icon(Icons.keyboard_arrow_right,
-                        color: Colors.blue),
+                    title: Container(
+                      padding: const EdgeInsets.only(top: 10.0),
+                      child: Text(
+                        opt['texto'],
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    subtitle: opt['subtexto'] != null
+                        ? Container(
+                            padding:
+                                const EdgeInsets.only(bottom: 10.0, top: 5.0),
+                            child: Text(opt['subtexto']))
+                        : null,
+                    leading: Container(
+                      alignment: Alignment.center,
+                      width: 40.0,
+                      child: getIcon(opt['icon']),
+                    ),
+                    trailing: Container(
+                      alignment: Alignment.center,
+                      width: 20.0,
+                      child: const Icon(Icons.keyboard_arrow_right,
+                          color: Colors.blue),
+                    ),
                     onTap: () {
                       Navigator.pushNamed(context, opt['ruta']);
                     },
