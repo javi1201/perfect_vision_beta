@@ -30,8 +30,8 @@ class BotonesPage extends StatelessWidget {
               begin: FractionalOffset(0.0, 0.9),
               end: FractionalOffset(0.0, 1.0),
               colors: [
-            Color.fromRGBO(0, 67, 130, 1.0),
-            Color.fromRGBO(0, 67, 130, 1.0),
+            Color.fromRGBO(236, 247, 247, 1),
+            Color.fromRGBO(236, 247, 247, 1),
           ])),
     );
 
@@ -44,8 +44,8 @@ class BotonesPage extends StatelessWidget {
       decoration: const BoxDecoration(
           //borderRadius: BorderRadius.circular(80.0),
           gradient: LinearGradient(colors: [
-        Color.fromRGBO(0, 67, 130, 1.0),
-        Color.fromRGBO(0, 67, 130, 1.0),
+        Color.fromRGBO(82, 147, 206, 1.0),
+        Color.fromRGBO(82, 147, 206, 1.0),
       ])),
       //),
     );
@@ -58,11 +58,11 @@ class BotonesPage extends StatelessWidget {
   Widget _titulos() {
     return SafeArea(
       child: Container(
-        padding: const EdgeInsets.all(20.0),
-        child: const Column(
+        padding: const EdgeInsets.only(bottom: 1),
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
+          children: const [
+            /*Text(
               'Bienvenido',
               style: TextStyle(
                   color: Colors.white,
@@ -78,7 +78,11 @@ class BotonesPage extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 18.0,
               ),
-            ),
+            ),*/
+            Image(
+                height: 130,
+                image: AssetImage(
+                    'data/assets/images/background_images/logo_blanco.png'))
           ],
         ),
       ),
@@ -88,7 +92,7 @@ class BotonesPage extends StatelessWidget {
   Widget _bottomNavigationBar(BuildContext context) {
     return Theme(
       data: Theme.of(context).copyWith(
-        canvasColor: const Color.fromARGB(255, 0, 51, 99),
+        canvasColor: const Color.fromRGBO(82, 147, 206, 1.0),
         primaryColor: Colors.white,
       ),
       child: BottomNavigationBar(
@@ -159,7 +163,7 @@ class BotonesPage extends StatelessWidget {
               );
             },
             child: _crearBotonRedondeado(
-              Colors.white,
+              Colors.black,
               const Image(
                 image: AssetImage(
                   'data/assets/images/icons/icons8-snellen-chart-64(1).png',
@@ -171,7 +175,7 @@ class BotonesPage extends StatelessWidget {
           GestureDetector(
             onTap: () => Navigator.pushNamed(context, 'medicamentos'),
             child: _crearBotonRedondeado(
-                Colors.white,
+                Colors.black,
                 const Image(
                     image: AssetImage(
                         'data/assets/images/icons/icons8-pills-64.png')),
@@ -182,7 +186,7 @@ class BotonesPage extends StatelessWidget {
           GestureDetector(
             onTap: () => Navigator.pushNamed(context, 'geleria3d'),
             child: _crearBotonRedondeado(
-                Colors.white,
+                Colors.black,
                 const Image(
                     image: AssetImage(
                         'data/assets/images/icons/icons8-360-image-64(1).png')),
@@ -191,7 +195,7 @@ class BotonesPage extends StatelessWidget {
           GestureDetector(
             onTap: () => Navigator.pushNamed(context, 'portafolio'),
             child: _crearBotonRedondeado(
-                Colors.white,
+                Colors.black,
                 const Image(
                     image: AssetImage(
                         'data/assets/images/icons/icons8-comics-magazine-64.png')),
@@ -202,7 +206,7 @@ class BotonesPage extends StatelessWidget {
           GestureDetector(
             onTap: () => Navigator.pushNamed(context, 'realidad'),
             child: _crearBotonRedondeado(
-                Colors.white,
+                Colors.black,
                 const Image(
                     image: AssetImage(
                         'data/assets/images/icons/icons8-augmented-reality-64.png')),
@@ -211,7 +215,7 @@ class BotonesPage extends StatelessWidget {
           GestureDetector(
             onTap: () => Navigator.pushNamed(context, 'chat'),
             child: _crearBotonRedondeado(
-                Colors.white,
+                Colors.black,
                 const Image(
                     image: AssetImage(
                         'data/assets/images/icons/icons8-chatbot-64.png')),
@@ -227,14 +231,14 @@ class BotonesPage extends StatelessWidget {
       height: 150.0,
       margin: const EdgeInsets.all(15.0),
       decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 0, 51, 99),
+          color: Color.fromARGB(255, 255, 255, 255),
           borderRadius: BorderRadius.circular(20.0)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           const SizedBox(height: 5.0),
           CircleAvatar(
-            backgroundColor: const Color.fromARGB(255, 0, 51, 99),
+            backgroundColor: Color.fromARGB(255, 255, 255, 255),
             radius: 35.0,
             child: icono,
           ),

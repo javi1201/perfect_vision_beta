@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../providers/menu_provider.dart';
 import '../../utils/icono_string_util.dart';
-import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
 class PruebasPage extends StatelessWidget {
   const PruebasPage({Key? key}) : super(key: key);

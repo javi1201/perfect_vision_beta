@@ -15,7 +15,7 @@ class ChatPage extends StatefulWidget {
 }
 
 Future<String> generateResponse(String prompt) async {
-  const apiKey = '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';
+  const apiKey = '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';
 
   var url = Uri.https("api.openai.com", "/v1/completions");
   final response = await http.post(
@@ -70,7 +70,7 @@ class _ChatPageState extends State<ChatPage> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
-        title: const Padding(
+        title: Padding(
           padding: EdgeInsets.all(8.0),
           child: Row(
             children: [

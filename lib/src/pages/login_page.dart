@@ -232,7 +232,7 @@ class LoginPage extends StatelessWidget {
         //Positioned(bottom: -50.0, right: -20.0, child: circulo),
         Container(
           padding: const EdgeInsets.only(top: 80.0),
-          child: const Column(
+          child: Column(
             children: [
               Icon(
                 Icons.person_pin_circle,

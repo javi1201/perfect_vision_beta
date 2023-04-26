@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:perfect_vision/src/pages/afecciones/presbicia.dart';
+import 'package:perfect_vision/src/pages/ar_page.dart';
 import 'package:perfect_vision/src/pages/blog.dart';
 import 'package:perfect_vision/src/pages/chatbot.dart';
 import 'package:perfect_vision/src/pages/portafolio_page.dart';
@@ -57,6 +59,8 @@ Map<String, WidgetBuilder> getApplicationRoutes() {
     'blog': (BuildContext context) => const BlogPage(),
     'settings': (BuildContext context) => const SettingsPage(),
     'portafolio': (BuildContext context) => const PortafolioPage(),
-    'chat': (BuildContext context) => const ChatPage()
+    'chat': (BuildContext context) => const ChatPage(),
+    'ar': (BuildContext context) => const ArCorePage(),
+    'presbicia': (BuildContext context) => const PresbiciaPage(),
   };
 }

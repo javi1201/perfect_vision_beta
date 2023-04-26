@@ -173,7 +173,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     _videoPlayerController = VideoPlayerController.network(widget.videoUrl);
     _chewieController = ChewieController(
         videoPlayerController: _videoPlayerController,
-        fullScreenByDefault: true,
+        fullScreenByDefault: false,
         autoInitialize: true,
         autoPlay: true,
         showControls: true,

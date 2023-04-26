@@ -121,7 +121,7 @@ class BlogPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(0, 67, 130, 1.0),
+        backgroundColor: const Color.fromRGBO(82, 147, 206, 1.0),
         automaticallyImplyLeading: false,
         title: const Center(
             child: Image(
@@ -139,7 +139,7 @@ class BlogPage extends StatelessWidget {
   Widget _bottomNavigationBar(BuildContext context) {
     return Theme(
       data: Theme.of(context).copyWith(
-        canvasColor: const Color.fromRGBO(0, 67, 130, 1.0),
+        canvasColor: const Color.fromRGBO(82, 147, 206, 1.0),
         primaryColor: Colors.white,
       ),
       child: BottomNavigationBar(
