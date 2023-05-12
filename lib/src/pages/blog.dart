@@ -135,12 +135,11 @@ class _BlogScreenState extends State<BlogScreen> {
                   ElevatedButton(
                     child: Text('Save'),
                     onPressed: () {
-                      // Now you can use the text from the text fields elsewhere in your code.
+
                       String postTitle = _titleController.text;
                       String authorName = _authorController.text;
                       String content1 = _contentController.text;
 
-                      // Don't forget to clear the controllers after use to avoid residual data
                       _titleController.clear();
                       _authorController.clear();
                       _contentController.clear();
