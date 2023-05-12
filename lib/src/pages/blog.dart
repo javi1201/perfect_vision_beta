@@ -59,13 +59,22 @@ final List<Post> posts = [
   // Añadir más entradas del blog aquí...
 ];
 
-class BlogScreen extends StatelessWidget {
-  const BlogScreen({super.key});
+class BlogScreen extends StatefulWidget {
+  BlogScreen({Key? key}) : super(key: key);
+
+  @override
+  _BlogScreenState createState() => _BlogScreenState();
+}
+
+class _BlogScreenState extends State<BlogScreen> {
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _authorController = TextEditingController();
+  final TextEditingController _contentController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
+      body: ListView.builder( 
         itemCount: posts.length,
         itemBuilder: (context, index) {
           final post = posts[index];
@@ -81,6 +90,70 @@ class BlogScreen extends StatelessWidget {
                 ),
               );
             },
+            trailing: IconButton(
+              icon: Icon(Icons.edit),
+              onPressed: () {
+                // put the action you want here
+                print("Button pressed");
+              },
+            ),
+          );
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: Text('Add new post'),
+                content: Column(
+                  children: <Widget>[
+                    TextFormField(
+                      controller: _titleController,
+                      decoration: InputDecoration(hintText: 'Post title'),
+                    ),
+                    TextFormField(
+                      controller: _authorController,
+                      decoration: InputDecoration(hintText: 'Author name'),
+                    ),
+                    TextFormField(
+                      controller: _contentController,
+                      decoration: InputDecoration(hintText: 'Content'),
+                    ),
+                    // Add more TextFormFields for additional data as needed.
+                  ],
+                ),
+                actions: <Widget>[
+                  ElevatedButton(
+                    child: Text('Cancel'),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                  ElevatedButton(
+                    child: Text('Save'),
+                    onPressed: () {
+                      // Now you can use the text from the text fields elsewhere in your code.
+                      String postTitle = _titleController.text;
+                      String authorName = _authorController.text;
+                      String content1 = _contentController.text;
+
+                      // Don't forget to clear the controllers after use to avoid residual data
+                      _titleController.clear();
+                      _authorController.clear();
+                      _contentController.clear();
+
+                      Navigator.push(context, 
+                      MaterialPageRoute(builder: (context) => BlogPostScreen(post: Post(title: postTitle, author: authorName, content: "content1", date: DateTime.now())))
+                      );
+                      
+                    },
+                  ),
+                ],
+              );
+            },
           );
         },
       ),
@@ -88,10 +161,14 @@ class BlogScreen extends StatelessWidget {
   }
 }
 
+
+
+
+
 class BlogPostScreen extends StatelessWidget {
   final Post post;
 
-  const BlogPostScreen({super.key, required this.post});
+  const BlogPostScreen({Key? key, required this.post}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -106,13 +183,33 @@ class BlogPostScreen extends StatelessWidget {
           children: [
             Text('${post.author} - ${post.date}'),
             const SizedBox(height: 16),
-            Text(post.content),
+            Expanded(child: Text(post.content)), // Wrap with Expanded to avoid overflow
           ],
         ),
       ),
-    );
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround, // Aligns the icons with equal space in the middle
+          children: <Widget>[
+            IconButton(
+              icon: Icon(Icons.edit),
+              onPressed: () {
+                // Implement your Edit functionality here
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.delete),
+              onPressed: () {
+                // Implement your Delete functionality here
+              },
+            ),
+          ],
+        ),
+      ),
+    );    
   }
 }
+
 
 class BlogPage extends StatelessWidget {
   const BlogPage({super.key});
@@ -132,7 +229,7 @@ class BlogPage extends StatelessWidget {
         )),
       ),
       bottomNavigationBar: _bottomNavigationBar(context),
-      body: const BlogScreen(),
+      body:  BlogScreen(),
     );
   }
 
