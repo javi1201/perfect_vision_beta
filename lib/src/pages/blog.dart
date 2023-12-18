@@ -13,7 +13,7 @@ class Post {
       required this.date});
 }
 
-final List<Post> posts = [
+List<Post> posts = [
   Post(
     title: '¿Que es la Discromatopsia?',
     author: 'Cristian López',
@@ -144,10 +144,12 @@ class _BlogScreenState extends State<BlogScreen> {
                       _authorController.clear();
                       _contentController.clear();
 
-                      Navigator.push(context, 
-                      MaterialPageRoute(builder: (context) => BlogPostScreen(post: Post(title: postTitle, author: authorName, content: "content1", date: DateTime.now())))
-                      );
-                      
+                      posts.add(Post(
+                        title: postTitle,
+                        author: authorName,
+                        content: content1,
+                        date: DateTime.now()
+                      )); // Add the post to the list.
                     },
                   ),
                 ],

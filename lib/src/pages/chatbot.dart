@@ -15,9 +15,9 @@ class ChatPage extends StatefulWidget {
 }
 
 Future<String> generateResponse(String prompt) async {
-  const apiKey = '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';
+  
 
-  var url = Uri.https("api.openai.com", "/v1/completions");
+var url = Uri.https("api.openai.com", "/v1/chat/completions");
   final response = await http.post(
     url,
     headers: {
@@ -25,8 +25,8 @@ Future<String> generateResponse(String prompt) async {
       "Authorization": "Bearer $apiKey"
     },
     body: json.encode({
-      "model": "text-davinci-003",
-      "prompt": prompt,
+      "model": "gpt-3.5-turbo",
+      "messages": [{"role": "user", "content": prompt}],
       'temperature': 0,
       'max_tokens': 2000,
       'top_p': 1,
@@ -35,11 +35,28 @@ Future<String> generateResponse(String prompt) async {
     }),
   );
 
-  // Do something with the response
-  Map<String, dynamic> newresponse =
-      jsonDecode(utf8.decode(response.bodyBytes));
+  // Log the response for debugging
+  //print("Response status: ${response.statusCode}");
+  //print("Response body: ${response.body}");
 
-  return newresponse['choices'][0]['text'];
+ if (response.statusCode == 200) {
+    Map<String, dynamic> newresponse = jsonDecode(utf8.decode(response.bodyBytes));
+
+    if (newresponse != null && newresponse.containsKey('choices') && newresponse['choices'].isNotEmpty) {
+      var choice = newresponse['choices'][0];
+      if (choice != null && choice.containsKey('message')) {
+        return choice['message']['content'] ?? "Error: Empty message content.";
+      } else {
+        return "Error: 'message' field is missing or empty.";
+      }
+    } else {
+      //print("Error: 'choices' field is null or empty.");
+      return "Error: Response from API is not as expected.";
+    }
+  } else {
+    //print("Error: HTTP request failed with status ${response.statusCode}.");
+    return "Error: Failed to fetch response from API.";
+  }
 }
 
 class _ChatPageState extends State<ChatPage> {

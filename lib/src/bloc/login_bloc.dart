@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:perfect_vision/src/bloc/validators.dart';
 import 'package:rxdart/rxdart.dart';
 

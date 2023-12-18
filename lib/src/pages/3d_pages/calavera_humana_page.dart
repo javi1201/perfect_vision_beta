@@ -1,5 +1,6 @@
 import 'package:babylonjs_viewer/babylonjs_viewer.dart';
 import 'package:flutter/material.dart';
+import 'package:sensors_plus/sensors_plus.dart';
 
 class CalaveraHumanaPage extends StatelessWidget {
   const CalaveraHumanaPage({super.key});
